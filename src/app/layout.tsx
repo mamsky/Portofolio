@@ -18,14 +18,11 @@ export default function RootLayout({
       <head />
       <body
         suppressHydrationWarning
-        className={cn("min-h-screen bg-background font-sans antialiased")}
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased transition duration-700 ease-in-out"
+        )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
         </ThemeProvider>
       </body>

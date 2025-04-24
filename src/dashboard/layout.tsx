@@ -14,17 +14,17 @@ const Layout = () => {
       <div className="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-16 mb-32">
         <div className="relative w-full lg:w-1/3 flex justify-center lg:justify-start">
           <Image
-            className="relative w-64 h-64 lg:w-[320px] lg:h-[320px] rounded-xl shadow-lg object-cover transform transition duration-500 hover:scale-105"
+            className="relative w-64 h-64 lg:w-[320px] lg:h-[320px] rounded-xl shadow-2xl shadow-stone-900 object-cover transform transition duration-500 hover:scale-105"
             src={AvatarImages}
             alt="paste prosmana"
           />
         </div>
         <div className="w-full lg:w-2/3 text-center lg:text-left">
           <div className="mb-8">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-2xl lg:text-4xl font-bold mb-6">
               {"Hi, I'm Paste Prosmana"}
             </h1>
-            <p className="text-xl lg:text-2xl  font-medium mb-6">
+            <p className="text-lg md:text-xl lg:text-2xl  font-medium mb-6">
               Full Stack Developer
             </p>
             <p className="text-justify text-base lg:text-lg leading-relaxed">
