@@ -10,8 +10,8 @@ import {
 
 const Layout = () => {
   return (
-    <div className="container mx-auto px-6 py-12 md:py-24">
-      <div className="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-16 mb-32">
+    <div className="container mx-auto px-6 py-12 md:py-24 mt-10">
+      <div className="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-16">
         <div className="relative w-full lg:w-1/3 flex justify-center lg:justify-start">
           <Image
             className="relative w-64 h-64 lg:w-[320px] lg:h-[320px] rounded-xl shadow-2xl shadow-stone-900 object-cover transform transition duration-500 hover:scale-105"
@@ -44,10 +44,14 @@ const Layout = () => {
                 Available for new projects
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-                <Button className="bg-green-500 hover:bg-green-600 text-white text-sm cursor-pointer px-4 py-2 rounded-lg transition-colors flex items-center font-medium">
+                <a
+                  href="https://wa.me/6289611241174"
+                  target="_blank"
+                  className="bg-green-500 hover:bg-green-600 text-white text-sm cursor-pointer px-4 py-2 rounded-lg transition-colors flex items-center gap-2 font-medium"
+                >
                   <FaWhatsapp />
                   {" Let's Talk"}
-                </Button>
+                </a>
                 <Button>
                   <HiOutlineDocumentDownload />
                   Download CV

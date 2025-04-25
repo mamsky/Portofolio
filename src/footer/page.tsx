@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 const FooterPage = () => {
   return (
     <div className="flex justify-center my-8">
-      <div className="flex-col">
+      <div className="flex-col text-md md:text-xl">
         <h1>© 2025 Designed and coded with ❤️ by Paste Prosmana</h1>
         <div className="flex justify-center gap-6 my-6">
           <span>

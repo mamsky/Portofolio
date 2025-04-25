@@ -10,16 +10,15 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
-import { useRef } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { HiOutlineDocumentDownload } from "react-icons/hi";
 import { RxHamburgerMenu } from "react-icons/rx";
 
 const Layout = () => {
-  const refById = useRef<HTMLDivElement>(null);
-  const handleButtonTech = () => {
-    console.log(refById.current);
+  const handleButtonTech = (text: string) => {
+    document.getElementById(text)?.scrollIntoView({ behavior: "smooth" });
   };
+
   return (
     <div className="flex justify-between my-4">
       <div>
@@ -46,13 +45,32 @@ const Layout = () => {
       </div>
       <div className=" hidden md:block">
         <div className="flex gap-4 items-center">
-          <Button onClick={handleButtonTech}>Tech Stack</Button>
-          <Link href="#work-experience">Experience</Link>
-          <Link href="/portofolio">Projects</Link>
-          <Button className="bg-green-500 hover:bg-green-600 text-white text-sm cursor-pointer px-4 py-2 rounded-lg transition-colors flex items-center font-medium">
+          <button
+            onClick={() => handleButtonTech("tech")}
+            className="cursor-pointer bg-transparent text-black dark:text-white"
+          >
+            Tech Stack
+          </button>
+          <button
+            onClick={() => handleButtonTech("work")}
+            className="cursor-pointer bg-transparent text-black dark:text-white"
+          >
+            Experience
+          </button>
+          <button
+            onClick={() => handleButtonTech("project")}
+            className="cursor-pointer bg-transparent text-black dark:text-white"
+          >
+            Projects
+          </button>
+          <a
+            href="https://wa.me/6289611241174"
+            target="_blank"
+            className="bg-green-500 hover:bg-green-600 text-white text-sm cursor-pointer px-4 py-2 rounded-lg transition-colors flex items-center gap-2 font-medium"
+          >
             <FaWhatsapp />
             {" Let's Talk"}
-          </Button>
+          </a>
           <Button>
             <HiOutlineDocumentDownload />
             Download CV

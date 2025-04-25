@@ -7,14 +7,12 @@ import WorkExperience from "@/work-experience/page";
 
 export default function Home() {
   return (
-    <div>
-      <div className="mx-4 md:mx-[5%] xl:mx-[15%]">
-        <Dashboard />
-        <PageMarquee />
-        <WorkExperience />
-        <MyProject />
-        <ContactPage />
-      </div>
+    <div className="mx-4 md:mx-[5%] xl:mx-[15%]">
+      <Dashboard />
+      <PageMarquee />
+      <WorkExperience />
+      <MyProject />
+      <ContactPage />
       <hr />
       <FooterPage />
     </div>
