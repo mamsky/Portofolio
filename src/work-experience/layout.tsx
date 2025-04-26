@@ -5,7 +5,7 @@ import DumbwaysImages from "@/assets/dumbways.png";
 export const ListWork = () => {
   return (
     <div className="space-y-6 mb-12 shadow-gray-500 shadow-lg rounded-xl">
-      <div className="flex flex-col md:flex-row items-start bg-white dark:bg-white/30 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-sm">
+      <div className="flex flex-col md:flex-row items-start bg-white dark:bg-white/10 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-sm">
         <Image
           height={0}
           width={0}

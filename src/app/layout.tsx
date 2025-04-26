@@ -2,6 +2,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 import { cn } from "@/lib/utils";
 import "./globals.css";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Portofolio",
@@ -25,6 +26,15 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
         </ThemeProvider>
+        <Toaster
+          toastOptions={{
+            unstyled: true,
+            classNames: {
+              error: "bg-red-500 flex gap-5 p-4 rounded-md",
+              success: "text-green-500 flex gap-5 p-4 rounded-md",
+            },
+          }}
+        />
       </body>
     </html>
   );

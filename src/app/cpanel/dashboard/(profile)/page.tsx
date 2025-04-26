@@ -8,13 +8,24 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import Image from "next/image";
+import ImagesLogo from "@/assets/dumbways.png";
 
 const ProfilePage = () => {
   return (
-    <div className="p-4 w-7xl">
-      <h1>Profile Setting</h1>
+    <div className="p-4 mt-10">
+      <h1 className="text-4xl mb-8 font-bold">Profile Setting</h1>
+      <div className="flex justify-center">
+        <Image
+          src={ImagesLogo}
+          alt="logo"
+          className="w-32 h-32 rounded-full bg-cover bg-center"
+        />
+      </div>
       <div className="my-4">
+        <label htmlFor="name">Name:</label>
         <Input
+          id="name"
           type="text"
           placeholder="Name"
           name="name"
@@ -22,20 +33,30 @@ const ProfilePage = () => {
         />
       </div>
       <div className="my-4">
+        <label htmlFor="skill">Profession:</label>
         <Input
-          name="skill"
+          id="profession"
+          name="profession"
           type="text"
           placeholder="Full Stack Developer"
           className="px-4 py-6"
         />
       </div>
       <div className="my-4">
-        <Textarea placeholder="Bio" name="bio" />
+        <label htmlFor="bio">Bio:</label>
+        <Textarea id="bio" placeholder="Bio" name="bio" />
       </div>
       <div className="my-4">
-        <Input placeholder="Location" name="location" className="px-4 py-6" />
+        <label htmlFor="location">Location</label>
+        <Input
+          id="location"
+          placeholder="Location"
+          name="location"
+          className="px-4 py-6"
+        />
       </div>
       <div>
+        <label htmlFor="available">Available or No</label>
         <Select>
           <SelectTrigger className="w-full py-6">
             <SelectValue placeholder="Available or No" />

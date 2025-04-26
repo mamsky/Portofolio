@@ -1,8 +1,8 @@
 import React from "react";
-import CpanelLayout from "./layout";
+import LoginPage from "./login/page";
 
 const CpanelPage = () => {
-  return <CpanelLayout />;
+  return <LoginPage />;
 };
 
 export default CpanelPage;

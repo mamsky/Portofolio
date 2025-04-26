@@ -1,4 +1,4 @@
-import { LayoutMyProject } from "./laout";
+import { LayoutMyProject } from "./layout";
 
 export const MyProject = () => {
   return (
@@ -6,7 +6,13 @@ export const MyProject = () => {
       {/* spacer for id  */}
       <div className="h-24"></div>
       <h1 className="text-2xl md:text-3xl font-bold mb-8">My Projects:</h1>
-      <LayoutMyProject />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <LayoutMyProject />
+        <LayoutMyProject />
+        <LayoutMyProject />
+        <LayoutMyProject />
+        <LayoutMyProject />
+      </div>
     </div>
   );
 };

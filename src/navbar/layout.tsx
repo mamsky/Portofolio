@@ -1,5 +1,5 @@
 "use client";
-import AvatarImages from "@/assets/images.jpg";
+import LogoImage from "@/assets/Logo-paste.png";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -9,7 +9,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 import { HiOutlineDocumentDownload } from "react-icons/hi";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -23,7 +22,7 @@ const Layout = () => {
     <div className="flex justify-between my-4">
       <div>
         <Avatar className="w-12 h-12">
-          <AvatarImage src={AvatarImages.src} alt="Paste" />
+          <AvatarImage src={LogoImage.src} alt="Paste" />
           <AvatarFallback>Paste</AvatarFallback>
         </Avatar>
       </div>
@@ -33,12 +32,23 @@ const Layout = () => {
             <RxHamburgerMenu />
           </DropdownMenuTrigger>
           <DropdownMenuContent className="md:hidden">
-            <DropdownMenuItem>
-              <Link href="#tech">Tech Stack</Link>
+            <DropdownMenuItem onClick={() => handleButtonTech("tech")}>
+              Tech Stack
             </DropdownMenuItem>
-            <DropdownMenuItem>Billing</DropdownMenuItem>
-            <DropdownMenuItem>Team</DropdownMenuItem>
-            <DropdownMenuItem>Subscription</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => handleButtonTech("work")}>
+              Experience
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => handleButtonTech("project")}>
+              Projects
+            </DropdownMenuItem>
+            <a
+              href="https://wa.me/6289611241174"
+              target="_blank"
+              className="bg-green-500 my-2 hover:bg-green-600 text-white text-sm cursor-pointer px-4 py-2 rounded-lg transition-colors flex items-center gap-2 font-medium"
+            >
+              <FaWhatsapp />
+              {" Let's Talk"}
+            </a>
             <ModeToggle />
           </DropdownMenuContent>
         </DropdownMenu>

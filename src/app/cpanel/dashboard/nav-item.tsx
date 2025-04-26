@@ -1,8 +1,10 @@
 import type { ReactNode } from "react";
-import ProfilePage from "./profile/page";
+import ProfilePage from "./(profile)/page";
 import WorkPage from "./work/page";
 import ProjectPage from "./project/page";
 import TechPage from "./tech/page";
+import LoginPage from "../login/page";
+
 export type NavigationItems = {
   path: string;
   label: string;
@@ -11,23 +13,28 @@ export type NavigationItems = {
 
 export const navigationItems: NavigationItems[] = [
   {
-    path: "/cpanel/profile",
+    path: "/cpanel/dashboard",
     label: "Profile",
     components: <ProfilePage />,
   },
   {
-    path: "/cpanel/work",
+    path: "/cpanel/dashboard/work",
     label: "Work",
     components: <WorkPage />,
   },
   {
-    path: "/cpanel/project",
+    path: "/cpanel/dashboard/project",
     label: "Project",
     components: <ProjectPage />,
   },
   {
-    path: "/cpanel/tech",
+    path: "/cpanel/dashboard/tech",
     label: "Tech",
     components: <TechPage />,
+  },
+  {
+    path: "/cpanel",
+    label: "Logout",
+    components: <LoginPage />,
   },
 ];
