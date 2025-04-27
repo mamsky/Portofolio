@@ -1,28 +1,18 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { redirect } from "next/navigation";
-import { useState } from "react";
-import { toast } from "sonner";
-
-type Login = {
-  username: string;
-  password: string;
-};
+import { LoginSchemaDTO, LoginSchemas } from "@/lib/schemas/Login.schemas";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const LoginPage = () => {
-  const [input, setInput] = useState<Login>({
-    username: "",
-    password: "",
+  const { register, handleSubmit, watch } = useForm<LoginSchemaDTO>({
+    mode: "onChange",
+    resolver: zodResolver(LoginSchemas),
   });
 
-  const handleLogin = () => {
-    if (input.username == "Admin" || input.password == "Admin") {
-      toast.success("Login Success");
-      return redirect("/cpanel/dashboard");
-    } else {
-      toast.error("Wrong Username or Password ");
-    }
+  const onSubmit = (data: LoginSchemaDTO) => {
+    console.log(watch());
   };
 
   return (
@@ -39,10 +29,9 @@ const LoginPage = () => {
             <Input
               id="username"
               type="text"
-              name="username"
               placeholder="Admin"
               className="px-4 py-6 bg-white text-xl"
-              onChange={(e) => setInput({ ...input, username: e.target.value })}
+              {...register("username")}
             />
           </div>
           <div className="my-4 ">
@@ -50,15 +39,14 @@ const LoginPage = () => {
               Password:
             </label>
             <Input
-              name="password"
               type="password"
               placeholder="*******"
               className="px-4 py-6 bg-white text-xl"
-              onChange={(e) => setInput({ ...input, password: e.target.value })}
+              {...register("password")}
             />
           </div>
           <Button
-            onClick={handleLogin}
+            onClick={handleSubmit(onSubmit)}
             className="my-4 md:my-8 px-4 py-6 font-bold w-full text-xl md:text-2xl bg-cyan-500 hover:bg-cyan-900 cursor-pointer"
           >
             Login
